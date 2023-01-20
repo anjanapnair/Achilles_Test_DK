@@ -10,10 +10,7 @@ namespace TypeOfTriangle
     /// To determine the type of a triangle, given the length of three sides
     /// </summary>
     public class Triangle
-    {
-        public static double sideA { get; set; }
-        public static double sideB { get; set; }
-        public static double sideC { get; set; }
+    {        
 
         public enum TriangleType
         {
@@ -52,43 +49,39 @@ namespace TypeOfTriangle
                 return true;
         }
 
-        //To read lengths of each side of a triangle
-        public static void ReadLengths()
-        {
-            while (true)
-            {
-                try
-                {
-                    
-                    Console.Write("\nLength of Side 1: ");
-                    sideA = Convert.ToDouble(Console.ReadLine());
-                    Console.Write("\nLength of Side 2: ");
-                    sideB = Convert.ToDouble(Console.ReadLine());
-                    Console.Write("\nLength of Side 3: ");
-                    sideC = Convert.ToDouble(Console.ReadLine());
-
-                    Console.Write("\nThree sides are:- \n");
-                    Console.Write(sideA+" "+sideB+" "+sideC+"\n");
-                    break;
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("\nWaiting..!");
-                    continue;
-                }
-
-            }
-        }
+        
 
         public static void Main(string[] args)
         {
-            
 
+            double sideA, sideB, sideC;
             Console.Write("------Determine the type of Triangle--------\n");            
 
             do
             {
-                ReadLengths();
+                while (true)
+                {
+                    try
+                    {
+
+                        Console.Write("\nLength of Side 1: ");
+                        sideA = Convert.ToDouble(Console.ReadLine());
+                        Console.Write("\nLength of Side 2: ");
+                        sideB = Convert.ToDouble(Console.ReadLine());
+                        Console.Write("\nLength of Side 3: ");
+                        sideC = Convert.ToDouble(Console.ReadLine());
+
+                        Console.Write("\nThree sides are:- \n");
+                        Console.Write(sideA + " " + sideB + " " + sideC + "\n");
+                        break;
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("\nWaiting..!");
+                        continue;
+                    }
+
+                }
 
                 if (CheckInvalidLengths(sideA, sideB, sideC))
                 {
